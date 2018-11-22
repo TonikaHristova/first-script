@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.6.7 on win32)" generated="20181119 13:51:16.819">
+<suite id="s1" name="Amazon" source="C:\Users\Emoov\RobotCourse\first-script\Tests\amazon.robot">
+<test id="s1-t1" name="User must sign in">
+<kw name="Open Browser">
+<arguments>
+<arg>http://www.amazon.com</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20181119 13:51:16.848" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<status status="FAIL" starttime="20181119 13:51:16.848" endtime="20181119 13:51:16.848"></status>
+</kw>
+<doc>bla bla</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="FAIL" starttime="20181119 13:51:16.846" endtime="20181119 13:51:16.848" critical="yes">No keyword with name 'Open Browser' found.</status>
+</test>
+<doc>This is some basic info for the whole suite</doc>
+<status status="FAIL" starttime="20181119 13:51:16.821" endtime="20181119 13:51:16.851"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">Smoke</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Amazon">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20181119 13:51:16.821" level="ERROR">Error in file 'C:\Users\Emoov\RobotCourse\first-script\Tests\amazon.robot': Setting variable '${BROWSER} chrome' failed: Invalid variable name '${BROWSER} chrome'.</msg>
+<msg timestamp="20181119 13:51:16.844" level="ERROR">Error in file 'C:\Users\Emoov\RobotCourse\first-script\Tests\amazon.robot': Importing test library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\Emoov\AppData\Local\Programs\Python\Python36\python36.zip
+  C:\Users\Emoov\AppData\Local\Programs\Python\Python36\DLLs
+  C:\Users\Emoov\AppData\Local\Programs\Python\Python36\lib
+  C:\Users\Emoov\AppData\Local\Programs\Python\Python36
+  C:\Users\Emoov\AppData\Local\Programs\Python\Python36\lib\site-packages</msg>
+</errors>
+</robot>

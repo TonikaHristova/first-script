@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.6.7 on win32)" generated="20181122 11:18:12.414">
+<suite id="s1" name="Amazon" source="C:\Users\Emoov\RobotCourse\first-script\tests\amazon.robot">
+<test id="s1-t1" name="User must sign in">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Get Selection From User" library="Dialogs">
+<doc>Pauses test execution and asks user to select a value.</doc>
+<arguments>
+<arg>Which browser ?</arg>
+<arg>chrome</arg>
+<arg>firefox</arg>
+</arguments>
+<assign>
+<var>${new_browser}</var>
+</assign>
+<msg timestamp="20181122 11:18:16.133" level="INFO">${new_browser} = chrome</msg>
+<status status="PASS" starttime="20181122 11:18:12.597" endtime="20181122 11:18:16.134"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+<arg>${new_browser}</arg>
+</arguments>
+<msg timestamp="20181122 11:18:16.135" level="INFO">${BROWSER} = chrome</msg>
+<status status="PASS" starttime="20181122 11:18:16.134" endtime="20181122 11:18:16.135"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20181122 11:18:16.136" level="INFO">Opening browser 'chrome' to base url 'https://amazon.com'.</msg>
+<status status="PASS" starttime="20181122 11:18:16.135" endtime="20181122 11:18:20.906"></status>
+</kw>
+<status status="PASS" starttime="20181122 11:18:12.597" endtime="20181122 11:18:20.906"></status>
+</kw>
+<kw name="Search for Product" library="AmazonApp">
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Your Amazon.com</arg>
+</arguments>
+<status status="PASS" starttime="20181122 11:18:20.908" endtime="20181122 11:18:21.010"></status>
+</kw>
+<status status="PASS" starttime="20181122 11:18:20.908" endtime="20181122 11:18:21.010"></status>
+</kw>
+<kw name="Search for a product" library="LandingPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${SEARCH_TERM}</arg>
+</arguments>
+<msg timestamp="20181122 11:18:21.011" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20181122 11:18:21.011" endtime="20181122 11:18:21.985"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${SEARCH_BUTTON}</arg>
+</arguments>
+<msg timestamp="20181122 11:18:21.986" level="INFO">Clicking button 'xpath = //input[@value='Go']'.</msg>
+<status status="PASS" starttime="20181122 11:18:21.986" endtime="20181122 11:18:24.135"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>results for "${SEARCH_TERM}"</arg>
+</arguments>
+<status status="PASS" starttime="20181122 11:18:24.136" endtime="20181122 11:18:24.172"></status>
+</kw>
+<status status="PASS" starttime="20181122 11:18:21.011" endtime="20181122 11:18:24.172"></status>
+</kw>
+<status status="PASS" starttime="20181122 11:18:20.907" endtime="20181122 11:18:24.172"></status>
+</kw>
+<kw name="Select Product from Search result" library="AmazonApp">
+<kw name="Select one product from the search" library="ProductListPage">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>xpath = //div[@class='a-row a-spacing-none scx-truncate-medium sx-line-clamp-2']/a[@title='RASTAR Ferrari Remote Control Car, 1/24 Scale Ferrari 458 Italia Model Car, Red Ferrari Toy Car, 27 MHz']</arg>
+</arguments>
+<msg timestamp="20181122 11:18:24.174" level="INFO">Clicking link 'xpath = //div[@class='a-row a-spacing-none scx-truncate-medium sx-line-clamp-2']/a[@title='RASTAR Ferrari Remote Control Car, 1/24 Scale Ferrari 458 Italia Model Car, Red Ferrari Toy Car, 27 MHz']'.</msg>
+<status status="PASS" starttime="20181122 11:18:24.173" endtime="20181122 11:18:27.574"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Back to search results for "Ferrari 458"</arg>
+</arguments>
+<status status="PASS" starttime="20181122 11:18:27.574" endtime="20181122 11:18:27.643"></status>
+</kw>
+<status status="PASS" starttime="20181122 11:18:24.173" endtime="20181122 11:18:27.643"></status>
+</kw>
+<status status="PASS" starttime="20181122 11:18:24.173" endtime="20181122 11:18:27.643"></status>
+</kw>
+<kw name="Execute Manual Step" library="Dialogs">
+<doc>Pauses test execution until user sets the keyword status.</doc>
+<arguments>
+<arg>Do something manually!</arg>
+<arg>It failed!</arg>
+</arguments>
+<status status="PASS" starttime="20181122 11:18:27.643" endtime="20181122 11:18:29.314"></status>
+</kw>
+<kw name="Add product to Cart" library="AmazonApp">
+<kw name="Add one product to cart" library="ProductListPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath = //input[@id='add-to-cart-button']</arg>
+</arguments>
+<msg timestamp="20181122 11:18:29.315" level="INFO">Clicking button 'xpath = //input[@id='add-to-cart-button']'.</msg>
+<status status="PASS" starttime="20181122 11:18:29.315" endtime="20181122 11:18:30.423"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Added to Cart</arg>
+</arguments>
+<status status="PASS" starttime="20181122 11:18:30.423" endtime="20181122 11:18:30.516"></status>
+</kw>
+<status status="PASS" starttime="20181122 11:18:29.314" endtime="20181122 11:18:30.517"></status>
+</kw>
+<status status="PASS" starttime="20181122 11:18:29.314" endtime="20181122 11:18:30.517"></status>
+</kw>
+<kw name="Pause Execution" library="Dialogs">
+<doc>Pauses test execution until user clicks ``Ok`` button.</doc>
+<status status="PASS" starttime="20181122 11:18:30.517" endtime="20181122 11:18:38.626"></status>
+</kw>
+<kw name="Begin Checkout" library="AmazonApp">
+<kw name="Click the ckechout button" library="CheckoutPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${CHECKOUT_BUTTON}</arg>
+</arguments>
+<msg timestamp="20181122 11:18:38.628" level="INFO">Clicking element 'xpath = //a[@id='hlb-ptc-btn-native']'.</msg>
+<status status="PASS" starttime="20181122 11:18:38.628" endtime="20181122 11:18:38.782"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${SIGNIN_MAIN_HEADING}</arg>
+</arguments>
+<msg timestamp="20181122 11:18:38.799" level="INFO">Current page contains element 'xpath =//h1'.</msg>
+<status status="PASS" starttime="20181122 11:18:38.782" endtime="20181122 11:18:38.799"></status>
+</kw>
+<status status="PASS" starttime="20181122 11:18:38.627" endtime="20181122 11:18:38.799"></status>
+</kw>
+<status status="PASS" starttime="20181122 11:18:38.627" endtime="20181122 11:18:38.799"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20181122 11:18:38.800" endtime="20181122 11:18:41.056"></status>
+</kw>
+<status status="PASS" starttime="20181122 11:18:38.800" endtime="20181122 11:18:41.057"></status>
+</kw>
+<doc>bla bla</doc>
+<tags>
+<tag>Current</tag>
+</tags>
+<status status="PASS" starttime="20181122 11:18:12.596" endtime="20181122 11:18:41.057" critical="yes"></status>
+</test>
+<test id="s1-t2" name="User should be able to login">
+<kw name="Begin Web Test" library="Common" type="setup">
+<kw name="Get Selection From User" library="Dialogs">
+<doc>Pauses test execution and asks user to select a value.</doc>
+<arguments>
+<arg>Which browser ?</arg>
+<arg>chrome</arg>
+<arg>firefox</arg>
+</arguments>
+<assign>
+<var>${new_browser}</var>
+</assign>
+<msg timestamp="20181122 11:18:59.078" level="FAIL">No value provided by user.</msg>
+<status status="FAIL" starttime="20181122 11:18:41.061" endtime="20181122 11:18:59.078"></status>
+</kw>
+<status status="FAIL" starttime="20181122 11:18:41.060" endtime="20181122 11:18:59.078"></status>
+</kw>
+<kw name="End Web Test" library="Common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20181122 11:18:59.083" endtime="20181122 11:18:59.083"></status>
+</kw>
+<status status="PASS" starttime="20181122 11:18:59.082" endtime="20181122 11:18:59.084"></status>
+</kw>
+<status status="FAIL" starttime="20181122 11:18:41.059" endtime="20181122 11:18:59.088" critical="yes">Setup failed:
+No value provided by user.</status>
+</test>
+<doc>This is some basic info for the whole suite</doc>
+<status status="FAIL" starttime="20181122 11:18:12.416" endtime="20181122 11:18:59.094"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1">Critical Tests</stat>
+<stat pass="1" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">Current</stat>
+</tag>
+<suite>
+<stat pass="1" fail="1" id="s1" name="Amazon">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

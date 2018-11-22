@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.6.7 on win32)" generated="20181119 13:47:43.602">
+<suite id="s1" name="Locators" source="C:\Users\Emoov\RobotCourse\first-script\Tests\locators.robot">
+<test id="s1-t1" name="Should be able to search for products">
+<kw name="open browser">
+<arguments>
+<arg>http://www.amazon.com/</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20181119 13:47:43.630" level="FAIL">No keyword with name 'open browser' found.</msg>
+<status status="FAIL" starttime="20181119 13:47:43.630" endtime="20181119 13:47:43.631"></status>
+</kw>
+<status status="FAIL" starttime="20181119 13:47:43.629" endtime="20181119 13:47:43.631" critical="yes">No keyword with name 'open browser' found.</status>
+</test>
+<status status="FAIL" starttime="20181119 13:47:43.604" endtime="20181119 13:47:43.633"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Locators">Locators</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20181119 13:47:43.626" level="ERROR">Error in file 'C:\Users\Emoov\RobotCourse\first-script\Tests\locators.robot': Importing test library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\Emoov\AppData\Local\Programs\Python\Python36\python36.zip
+  C:\Users\Emoov\AppData\Local\Programs\Python\Python36\DLLs
+  C:\Users\Emoov\AppData\Local\Programs\Python\Python36\lib
+  C:\Users\Emoov\AppData\Local\Programs\Python\Python36
+  C:\Users\Emoov\AppData\Local\Programs\Python\Python36\lib\site-packages</msg>
+</errors>
+</robot>
